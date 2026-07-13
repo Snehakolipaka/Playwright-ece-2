@@ -4,6 +4,7 @@ import {customerpage} from '../Pages/customerpage';
 import {DeleteCustomerPage} from '../Pages/deleteCustomerPage';
 import {dashboardpage} from '../Pages/dashboardpage';
 import dotenv from 'dotenv'; 
+dotenv.config(); 
 
 type MyPageFixtures = {
     loginPage: loginpage;
