@@ -4,6 +4,7 @@ import {customerpage} from '../Pages/customerpage';
 import {DeleteCustomerPage} from '../Pages/deleteCustomerPage';
 import {dashboardpage} from '../Pages/dashboardpage';
 import dotenv from 'dotenv'; 
+import { NewAccountPage } from '../Pages/NewAccountpage';
 dotenv.config(); 
 
 type MyPageFixtures = {
@@ -11,6 +12,7 @@ type MyPageFixtures = {
     customerPage: customerpage;
     deleteCustomerPage: DeleteCustomerPage;
     dashboardPage: dashboardpage;
+    NewAccountPage: NewAccountPage;
     //age: number;
 };
 
@@ -34,6 +36,10 @@ export const test = Base.extend<MyPageFixtures>({
     dashboardPage: async ({ page }, use) => {
         const dp = new dashboardpage(page);
         await use(dp);
+    },
+    NewAccountPage: async ({ page }, use) => {
+        const nap = new NewAccountPage(page);
+        await use(nap);
     }
 });
 export { expect };
