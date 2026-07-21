@@ -41,7 +41,7 @@ jobs:
       run: npm ci
 
     - name: Run Playwright API tests
-      run: npx playwright test --project-api
+      run: npx playwright test --project=api
 
     - name: Upload Playwright Report
       if: ${{ !cancelled() }}
