@@ -1,9 +1,6 @@
 import {test, Locator, Page, expect} from '@playwright/test';
 import { Default_MediumTimeout } from '../util/helpers';
 export class DeleteCustomerPage {
-    HandleAlertwithAcceptForDeleteCustomerCheck() {
-        throw new Error('Method not implemented.');
-    }
     
     readonly page: Page;
     readonly deleteCustomerMenuItem : Locator;

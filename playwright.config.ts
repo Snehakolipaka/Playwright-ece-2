@@ -12,7 +12,7 @@ dotenv.config();
  * See https://playwright.dev/docs/test-configuration.
  */
 export default defineConfig({
-  testDir: './playwright/ui-layers/E2E',
+  testDir: './playwright/api-layer/e2e/',
   /* Run tests in files in parallel */
   fullyParallel: false,
   /* Fail the build on CI if you accidentally left test.only in the source code. */
@@ -37,8 +37,17 @@ export default defineConfig({
   /* Configure projects for major browsers */
   projects: [
     {
-      name: 'chromium',
-      use: { ...devices['Desktop Chrome'] },
+      name: 'ui',
+      testDir:'./playwright/ui-layer/E2E',
+      use: { ...devices['Desktop Chrome'], baseURL: process.env.GURU99_BASEURL},
+    },
+    {
+      name: 'api',
+      testDir:'./playwright/api-layer/E2E',
+      use: { 
+        screenshot:'off',
+        video:'off'
+       },
     },
 
     // {

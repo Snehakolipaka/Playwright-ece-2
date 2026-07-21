@@ -1,0 +1,34 @@
+import { APIRequest, APIRequestContext } from "@playwright/test";
+import { apiBaseUrl } from "../utility/apiConfig";
+
+export async function getAllBooksAPi(request:APIRequestContext){
+    const response=await request.get(`${apiBaseUrl}/booking`)
+    return response
+
+}
+
+export async function getAllBooksByAPi(request:APIRequestContext, id:any){
+    const response=await request.get(`${apiBaseUrl}/booking/${id}`)
+    return response
+
+}
+
+export async function createBookingApi(request:APIRequestContext, payload:object){
+    const response=await request.post(`${apiBaseUrl}/booking`,{
+        data:payload
+    })
+    return response
+}
+
+export async function updateBookingApi(request:APIRequestContext, payload:object, token:string){
+    const response=await request.put(`${apiBaseUrl}/booking/6`,{
+        data:payload,
+        headers:{
+        "Content-Type":"application/json",
+        "Accept":"application/json",
+        "Cookie":`token=${token}`
+        }
+    });
+    return response;
+}
+
