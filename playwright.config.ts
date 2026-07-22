@@ -42,7 +42,7 @@ export default defineConfig({
     },
     {
       name: 'api',
-      testDir:'./playwright/api-layer/E2E',
+      testDir:'./playwright/api-layer/e2e',
       use: { 
         screenshot:'off',
         video:'off'
